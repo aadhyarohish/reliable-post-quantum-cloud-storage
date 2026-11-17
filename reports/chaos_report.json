@@ -1,0 +1,141 @@
+[
+  {
+    "id": "E1",
+    "title": "Crash during migration (random crash points)",
+    "trials": 100,
+    "outcomes": {
+      "rolled_back": 30,
+      "committed": 32,
+      "no_crash": 38
+    },
+    "objects_lost_or_corrupt": 0,
+    "unexpected_end_state": 0,
+    "journals_left": 0,
+    "restart_ms_mean_incl_keystore_unlock": 149.27,
+    "restart_ms_max": 223.99,
+    "audit_chain_intact": true,
+    "hypothesis_held": true,
+    "experiment_seconds": 16.34
+  },
+  {
+    "id": "E2",
+    "title": "Silent bit flips and lost files",
+    "objects": 60,
+    "bit_flips": 12,
+    "files_deleted": 3,
+    "detected": 15,
+    "false_positives": 0,
+    "missed": 0,
+    "scrub_seconds": 0.084,
+    "ms_per_object": 1.4,
+    "integrity_slo_met": false,
+    "health_after": "fail",
+    "hypothesis_held": true,
+    "experiment_seconds": 0.97
+  },
+  {
+    "id": "E3",
+    "title": "Disk full (ENOSPC) during upload and migration",
+    "uploads_failed_cleanly": 10,
+    "migration_failed_cleanly": 1,
+    "partial_objects": 0,
+    "temp_files_left": 0,
+    "existing_object_intact": true,
+    "error_counter": 10,
+    "service_resumed": true,
+    "hypothesis_held": true,
+    "experiment_seconds": 0.38
+  },
+  {
+    "id": "E4",
+    "title": "Keystore locked / wrong passphrase",
+    "attempts": 4,
+    "failed_closed": 4,
+    "seconds_per_attempt": 0.0012,
+    "hypothesis_held": true,
+    "experiment_seconds": 0.45
+  },
+  {
+    "edit_full_verify_detected": true,
+    "full_verify_ms": 0.77,
+    "edit_caught_by_readiness_check": false,
+    "truncate_full_verify_detected": true,
+    "readiness_ms": 0.93,
+    "truncate_caught_by_readiness_check": true,
+    "id": "E5",
+    "title": "Audit-log tampering (edit, truncation)",
+    "records": 61,
+    "hypothesis_held": true,
+    "experiment_seconds": 0.55
+  },
+  {
+    "id": "E6",
+    "title": "Disaster recovery drill (total data-directory loss)",
+    "objects_backed_up": 200,
+    "backup_seconds": 0.198,
+    "backup_mb": 48.9,
+    "restore_seconds": 0.208,
+    "open_seconds": 0.342,
+    "rto_seconds_restore_open_scrub": 0.548,
+    "objects_recovered": 200,
+    "recovered_fraction": 1.0,
+    "rpo_objects_lost_after_backup": 20,
+    "audit_chain_intact_after_restore": true,
+    "scrub_corrupt_after_restore": 0,
+    "hypothesis_held": true,
+    "experiment_seconds": 2.39
+  },
+  {
+    "id": "E7",
+    "title": "Error-budget burn-rate alerting (5 % failures for 15 min)",
+    "requests": 7200,
+    "failures_injected": 52,
+    "time_to_page_seconds": 300,
+    "all_pages_cleared_after_recovery_seconds": 1680,
+    "ticket_still_open_at_end": true,
+    "sli_over_2h": 0.99278,
+    "budget_burn_rate_2h": 7.22,
+    "timeline_sample": [
+      {
+        "minute": 31,
+        "alerts": [
+          "ticket@1.0x"
+        ]
+      },
+      {
+        "minute": 32,
+        "alerts": [
+          "ticket@1.0x"
+        ]
+      },
+      {
+        "minute": 33,
+        "alerts": [
+          "ticket@1.0x"
+        ]
+      },
+      {
+        "minute": 34,
+        "alerts": [
+          "ticket@1.0x"
+        ]
+      },
+      {
+        "minute": 35,
+        "alerts": [
+          "page@6.0x",
+          "ticket@1.0x"
+        ]
+      },
+      {
+        "minute": 36,
+        "alerts": [
+          "page@6.0x",
+          "ticket@1.0x"
+        ]
+      }
+    ],
+    "hypothesis_held": true,
+    "experiment_seconds": 19.92
+  }
+]

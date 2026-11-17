@@ -1,0 +1,19 @@
+.venv/
+__pycache__/
+.pytest_cache/
+
+# secrets and runtime data - never commit
+keys/
+storage/
+audit.jsonl
+.env
+*.pem
+*.key
+*.seed
+*.seed.enc
+*.bin
+
+screenshots/
+archive_v1/
+
+backups/

@@ -1,0 +1,183 @@
+{
+  "environment": {
+    "platform": "Linux-6.18.44-fc-v310-x86_64-with-glibc2.39",
+    "python": "3.12.3",
+    "cpu_count": 1
+  },
+  "audit_scaling": [
+    {
+      "audit_records": 0,
+      "v2_scan_ms_mean": 0.969,
+      "v2_scan_ms_p99": 2.067,
+      "v3_cached_ms_mean": 0.989,
+      "v3_cached_ms_p99": 1.614,
+      "speedup": 1.0
+    },
+    {
+      "audit_records": 1000,
+      "v2_scan_ms_mean": 1.242,
+      "v2_scan_ms_p99": 2.181,
+      "v3_cached_ms_mean": 0.94,
+      "v3_cached_ms_p99": 1.887,
+      "speedup": 1.3
+    },
+    {
+      "audit_records": 5000,
+      "v2_scan_ms_mean": 2.517,
+      "v2_scan_ms_p99": 5.488,
+      "v3_cached_ms_mean": 1.007,
+      "v3_cached_ms_p99": 1.996,
+      "speedup": 2.5
+    },
+    {
+      "audit_records": 20000,
+      "v2_scan_ms_mean": 5.194,
+      "v2_scan_ms_p99": 8.122,
+      "v3_cached_ms_mean": 1.174,
+      "v3_cached_ms_p99": 2.063,
+      "speedup": 4.4
+    },
+    {
+      "audit_records": 50000,
+      "v2_scan_ms_mean": 10.916,
+      "v2_scan_ms_p99": 16.401,
+      "v3_cached_ms_mean": 1.123,
+      "v3_cached_ms_p99": 2.621,
+      "speedup": 9.7
+    }
+  ],
+  "mixed_load": {
+    "v2_scan": {
+      "cache_tail": false,
+      "workers": 8,
+      "ops": 1500,
+      "audit_prefill": 20000,
+      "wall_seconds": 11.45,
+      "throughput_ops_s": 131.0,
+      "errors": 0,
+      "per_op": {
+        "encrypt": {
+          "n": 531,
+          "p50_ms": 63.15,
+          "p95_ms": 118.55,
+          "p99_ms": 170.15,
+          "max_ms": 246.78
+        },
+        "decrypt": {
+          "n": 602,
+          "p50_ms": 63.77,
+          "p95_ms": 115.3,
+          "p99_ms": 151.42,
+          "max_ms": 236.62
+        },
+        "list": {
+          "n": 213,
+          "p50_ms": 13.58,
+          "p95_ms": 24.85,
+          "p99_ms": 28.86,
+          "max_ms": 30.1
+        },
+        "migrate": {
+          "n": 154,
+          "p50_ms": 65.52,
+          "p95_ms": 119.86,
+          "p99_ms": 160.53,
+          "max_ms": 168.99
+        }
+      },
+      "slo": [
+        {
+          "slo": "data_plane_availability",
+          "good": 1346,
+          "total": 1346,
+          "sli": 1.0,
+          "burn_rate": 0.0,
+          "meeting_slo": true
+        },
+        {
+          "slo": "data_plane_latency",
+          "good": 1133,
+          "total": 1133,
+          "sli": 1.0,
+          "burn_rate": 0.0,
+          "meeting_slo": true
+        },
+        {
+          "slo": "migration_success",
+          "good": 154,
+          "total": 154,
+          "sli": 1.0,
+          "burn_rate": 0.0,
+          "meeting_slo": true
+        }
+      ],
+      "audit_chain_intact": true
+    },
+    "v3_cached": {
+      "cache_tail": true,
+      "workers": 8,
+      "ops": 1500,
+      "audit_prefill": 20000,
+      "wall_seconds": 5.68,
+      "throughput_ops_s": 264.2,
+      "errors": 0,
+      "per_op": {
+        "encrypt": {
+          "n": 531,
+          "p50_ms": 32.38,
+          "p95_ms": 70.34,
+          "p99_ms": 98.06,
+          "max_ms": 145.17
+        },
+        "decrypt": {
+          "n": 602,
+          "p50_ms": 28.89,
+          "p95_ms": 71.0,
+          "p99_ms": 110.28,
+          "max_ms": 173.64
+        },
+        "list": {
+          "n": 213,
+          "p50_ms": 9.7,
+          "p95_ms": 19.01,
+          "p99_ms": 28.16,
+          "max_ms": 43.76
+        },
+        "migrate": {
+          "n": 154,
+          "p50_ms": 28.33,
+          "p95_ms": 68.8,
+          "p99_ms": 92.88,
+          "max_ms": 102.8
+        }
+      },
+      "slo": [
+        {
+          "slo": "data_plane_availability",
+          "good": 1346,
+          "total": 1346,
+          "sli": 1.0,
+          "burn_rate": 0.0,
+          "meeting_slo": true
+        },
+        {
+          "slo": "data_plane_latency",
+          "good": 1133,
+          "total": 1133,
+          "sli": 1.0,
+          "burn_rate": 0.0,
+          "meeting_slo": true
+        },
+        {
+          "slo": "migration_success",
+          "good": 154,
+          "total": 154,
+          "sli": 1.0,
+          "burn_rate": 0.0,
+          "meeting_slo": true
+        }
+      ],
+      "audit_chain_intact": true
+    }
+  }
+}
